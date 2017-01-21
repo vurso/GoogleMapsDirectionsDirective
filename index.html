@@ -1,0 +1,64 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Google Maps Directive Demo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.0/css/foundation.css" />
+    <link rel="stylesheet" href="css/site.css" />
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUkBBiE4cjxTArKKqSgHSCnOqCYQ9oE60&sensor=true"></script>
+</head>
+
+<body data-ng-app="googleApp" data-ng-controller="googleMapController">
+    <div class="row">
+        <div class="large-12 columns">
+            <h1>Google Map Directive Demo</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="small-3 small-centered columns">
+            <button type="button" class="primary button" ng-click="callDirFunc()">Map this as well!</button>
+        </div>
+    </div>
+    <div class="row expanded">
+        <map origin-location="OriginLocation" destination-location="DestinationLocation" map-this-fn="injectedObject" />
+    </div>
+    <div class="spacer-30"></div>
+    <div class="row">
+        <div class="large-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>From</th>
+                        <th>To</th>
+                        <th>Rate</th>
+                        <th>Date Created</th>
+                        <th>Date Modified</th>
+                        <th>Completed</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="booking in bookingTableData" ng-click="mapRow(booking)">
+                        <td>{{ booking.id | number }}</td>
+                        <td>{{ booking.from }}</td>
+                        <td>{{ booking.to }}</td>
+                        <td>{{ booking.rate | number }}</td>
+                        <td>{{ booking.dateCreated | date }}</td>
+                        <td>{{ booking.dateModified | date }}</td>
+                        <td>{{ booking.completed }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.0/js/foundation.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+    <script src="App/app.js"></script>
+    <script src="App/Controllers/googleMapController.js"></script>
+    <script src="App/Directives/googleMapDirective.js"></script>
+</body>
+
+</html>
