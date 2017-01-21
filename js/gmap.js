@@ -1,3 +1,5 @@
+// js file demonstrating how to call google maps directions service
+
 var directionsService;
 var directionsDisplay;
 
