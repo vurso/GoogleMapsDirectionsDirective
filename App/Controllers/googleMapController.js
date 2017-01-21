@@ -5,6 +5,7 @@ angular.module('googleMap', [])
         $scope.OriginLocation = {};
         $scope.DestinationLocation = {};
 
+        // set up some initial values for the test
         $scope.bookingTableData = [
             { 
                 id: 1,
@@ -38,9 +39,8 @@ angular.module('googleMap', [])
             }                  
         ];
 
-        // set up some initial values for the test
         // you would normally hook up the other Google API's here
-        // or use the endpoint I developed to communicate with the Google API
+        // or use an endpoint I developed to communicate with the Google API
         // servers and get stuff like lat, lng data, places info, details
 
         // this object is mapped to the response that comes back from the Google API
